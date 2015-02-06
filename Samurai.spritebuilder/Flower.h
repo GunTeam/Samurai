@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface Flower : CCSprite {
-    
+    UISwipeGestureRecognizer *swipeLeft, *swipeRight, *swipeUp,*swipeDown;
 }
 
 @property NSString *pattern;

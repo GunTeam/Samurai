@@ -345,8 +345,6 @@
 		7A40362019DDEF0D007B6E8F /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
-				BA79B3D21A83FA0B004E68DE /* Flower.h */,
-				BA79B3D31A83FA0B004E68DE /* Flower.m */,
 				7A40362119DDF08C007B6E8F /* iOS */,
 				7A40362219DDF090007B6E8F /* Android */,
 				7A9791C019E6FAC5001FFC4D /* Mac */,
@@ -465,6 +463,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA79B3D21A83FA0B004E68DE /* Flower.h */,
+				BA79B3D31A83FA0B004E68DE /* Flower.m */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
