@@ -10,7 +10,10 @@
 #import "cocos2d.h"
 
 @interface GameScene : CCNode {
-    
+    CCPhysicsNode *_physicsNode;
+
 }
+
+@property NSString *gameType;
 
 @end

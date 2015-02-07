@@ -475,10 +475,10 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA5B74791A85A3F600D154ED /* Scenes */,
 				CC4C15141A85C31100F4AA1A /* Game Modes */,
 				BA5B747A1A85A3FE00D154ED /* Sprites */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
-				BA5B74791A85A3F600D154ED /* Scenes */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
