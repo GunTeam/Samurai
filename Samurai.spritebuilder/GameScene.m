@@ -11,5 +11,8 @@
 
 @implementation GameScene
 
+-(void) didLoadFromCCB{
+    
+}
 
 @end

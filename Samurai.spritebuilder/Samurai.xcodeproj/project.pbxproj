@@ -466,15 +466,9 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BA79B3D21A83FA0B004E68DE /* Flower.h */,
-				BA79B3D31A83FA0B004E68DE /* Flower.m */,
-				BA5B74751A85A2B700D154ED /* Daisy.h */,
-				BA5B74761A85A2B700D154ED /* Daisy.m */,
+				BA5B747A1A85A3FE00D154ED /* Sprites */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
-				BA79B3CE1A83F9CF004E68DE /* GameScene.h */,
-				BA79B3CF1A83F9CF004E68DE /* GameScene.m */,
+				BA5B74791A85A3F600D154ED /* Scenes */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -569,6 +563,28 @@
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA5B74791A85A3F600D154ED /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B7378992180767190076A88C /* MainScene.h */,
+				B7378993180767190076A88C /* MainScene.m */,
+				BA79B3CE1A83F9CF004E68DE /* GameScene.h */,
+				BA79B3CF1A83F9CF004E68DE /* GameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BA5B747A1A85A3FE00D154ED /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				BA79B3D21A83FA0B004E68DE /* Flower.h */,
+				BA79B3D31A83FA0B004E68DE /* Flower.m */,
+				BA5B74751A85A2B700D154ED /* Daisy.h */,
+				BA5B74761A85A2B700D154ED /* Daisy.m */,
+			);
+			name = Sprites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
