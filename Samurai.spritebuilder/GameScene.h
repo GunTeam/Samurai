@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Daisy.h"
 
-@interface GameScene : CCNode {
+@interface GameScene : CCNode <CCPhysicsCollisionDelegate> {
     CCPhysicsNode *_physicsNode;
-
+    CGFloat screenHeight, screenWidth;
 }
 
+-(void) didLoadFromCCB;
+
 @property NSString *gameType;
+@property float flowerSpeed;
 
 @end

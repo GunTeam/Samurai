@@ -10,8 +10,13 @@
 
 
 @implementation Flower
+@synthesize pattern, downwardVelocity;
 
 -(void) didLoadFromCCB{
+    self.physicsBody.collisionType = @"flower";
+    self.physicsBody.collisionGroup = @"flowers";
+    downwardVelocity = 0;
+    
     //listen for swipes left
     swipeLeft= [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -45,6 +50,14 @@
 
 - (void)swipeUp {
     CCLOG(@"swipeUp");
+}
+
+-(void) launch{
+    CGPoint velVector = CGPointMake(0, -downwardVelocity);
+    self.physicsBody.velocity = velVector;
+    
+    
+    
 }
 
 @end
