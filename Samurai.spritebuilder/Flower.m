@@ -16,7 +16,7 @@
     self.physicsBody.collisionType = @"flower";
     self.physicsBody.collisionGroup = @"flowers";
     downwardVelocity = 0;
-    
+        
     //listen for swipes left
     swipeLeft= [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;

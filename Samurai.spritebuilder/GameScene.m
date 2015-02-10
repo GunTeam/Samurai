@@ -18,7 +18,9 @@
     screenHeight = screenSize.height;
     
     _physicsNode.collisionDelegate = self;
-    self.flowerSpeed = 0.5;
+    _physicsNode.debugDraw = true;
+    
+    self.flowerSpeed = 50;
     [self addFlower];
 }
 
@@ -27,8 +29,8 @@
 }
 
 -(void) addFlower{
-    Daisy *daisy = (Daisy*)[CCBReader load:@"Daisy"];
-    daisy.position = CGPointMake(screenWidth/2.,screenHeight);
+    Daisy *daisy = (Daisy*)[CCBReader load:@"Flowers/Daisy"];
+    daisy.position = CGPointMake(screenWidth/2.,screenHeight/2.);
     [daisy setDownwardVelocity: self.flowerSpeed];
     [daisy launch];
     [_physicsNode addChild:daisy];
