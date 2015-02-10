@@ -20,6 +20,8 @@
     _physicsNode.collisionDelegate = self;
     _physicsNode.debugDraw = true;
     
+    _HUDLayer.delegate = self;
+    
     self.flowerSpeed = 50;
     [self addFlower];
 }
@@ -36,5 +38,8 @@
     [_physicsNode addChild:daisy];
 }
 
+-(void)gameOver{
+    CCLOG(@"GameOver!!");
+}
 
 @end

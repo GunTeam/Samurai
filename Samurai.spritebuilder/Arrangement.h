@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "GameScene.h"
+#import "HUDLayer.h"
 
-@interface Arrangement : GameScene {
+@interface Arrangement : HUDLayer {
     
 }
 

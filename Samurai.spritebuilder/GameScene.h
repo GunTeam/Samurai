@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Daisy.h"
+#import "HUDLayer.h"
 
-@interface GameScene : CCNode <CCPhysicsCollisionDelegate> {
+@interface GameScene : CCNode <CCPhysicsCollisionDelegate,HUDDelegate> {
     CCPhysicsNode *_physicsNode;
     CGFloat screenHeight, screenWidth;
+    HUDLayer *_HUDLayer;
 }
 
 -(void) didLoadFromCCB;

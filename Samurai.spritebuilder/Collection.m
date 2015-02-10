@@ -12,12 +12,12 @@
 @implementation Collection
 @synthesize STARTING_LIVES, numLives, totalFlowers;
 
--(void) didLoadFromCCB{
-    [super didLoadFromCCB];
-    
-    STARTING_LIVES = 3;
-    numLives = STARTING_LIVES;
-    totalFlowers = 100; //how many flowers fall
-}
+//-(void) didLoadFromCCB{
+//    [super didLoadFromCCB];
+//    
+//    STARTING_LIVES = 3;
+//    numLives = STARTING_LIVES;
+//    totalFlowers = 100; //how many flowers fall
+//}
 
 @end

@@ -98,6 +98,7 @@
 		CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151A1A85C7DB00F4AA1A /* Arrangement.m */; };
 		CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151D1A85C7E400F4AA1A /* Collection.m */; };
 		CC4C15211A85C7F600F4AA1A /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C15201A85C7F600F4AA1A /* Bouquet.m */; };
+		CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +247,8 @@
 		CC4C151D1A85C7E400F4AA1A /* Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection.m; sourceTree = "<group>"; };
 		CC4C151F1A85C7F600F4AA1A /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bouquet.h; sourceTree = "<group>"; };
 		CC4C15201A85C7F600F4AA1A /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bouquet.m; sourceTree = "<group>"; };
+		CCCA5AA41A89C5D6002D8932 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
+		CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -606,6 +609,8 @@
 				CC4C15201A85C7F600F4AA1A /* Bouquet.m */,
 				CC4C151C1A85C7E400F4AA1A /* Collection.h */,
 				CC4C151D1A85C7E400F4AA1A /* Collection.m */,
+				CCCA5AA41A89C5D6002D8932 /* HUDLayer.h */,
+				CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */,
 			);
 			name = "Game Modes";
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */,
 				CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */,
+				CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				BA79B3D01A83F9CF004E68DE /* GameScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
