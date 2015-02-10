@@ -10,8 +10,13 @@
 
 
 @implementation Flower
+@synthesize pattern, downwardVelocity;
 
 -(void) didLoadFromCCB{
+    self.physicsBody.collisionType = @"flower";
+    self.physicsBody.collisionGroup = @"flowers";
+    downwardVelocity = 0;
+    
     //listen for swipes left
     swipeLeft= [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -31,20 +36,39 @@
 }
 
 //called when there's a left swipe
-- (void)swipeLeft {
-    CCLOG(@"swipeLeft");
+- (Boolean)swipeLeft {
+    //check if it should be rejected
+    //if so, return true
+    //else, return false
 }
 
-- (void)swipeRight {
-    CCLOG(@"swipeRight");
+//called when there's a right swipe
+- (Boolean)swipeRight {
+    //check if it should be accepted
+    //if so, return true
+    //else, return false
 }
 
-- (void)swipeDown {
-    CCLOG(@"swipeDown");
+//called when there's a down swipe
+- (Boolean)swipeDown {
+    //check if it's a powerup
+    //if so, return true
+    //else, return false
 }
 
-- (void)swipeUp {
-    CCLOG(@"swipeUp");
+//called when there's an up swipe
+- (Boolean)swipeUp {
+    //check if it's an enemy
+    //if so, return true
+    //else, return false
+}
+
+-(void) launch{
+    CGPoint velVector = CGPointMake(0, -downwardVelocity);
+    self.physicsBody.velocity = velVector;
+    
+    
+    
 }
 
 @end

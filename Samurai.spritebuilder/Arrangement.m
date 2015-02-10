@@ -11,4 +11,8 @@
 
 @implementation Arrangement
 
+-(void) didLoadFromCCB{
+    
+}
+
 @end

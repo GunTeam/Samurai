@@ -11,4 +11,10 @@
 
 @implementation Daisy
 
+-(void) didLoadFromCCB{
+    [super didLoadFromCCB];
+    
+    //what do we set about each flower differently? hm
+}
+
 @end

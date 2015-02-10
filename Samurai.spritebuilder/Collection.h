@@ -15,6 +15,9 @@
     
 }
 
-@property int lives;
+@property int STARTING_LIVES;
+@property int numLives;
+@property int totalFlowers;
+
 
 @end
