@@ -37,6 +37,7 @@
 
 //called when there's a left swipe
 - (Boolean)swipeLeft {
+    
     //check if it should be rejected
     //if so, return true
     //else, return false
