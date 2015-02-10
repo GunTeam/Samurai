@@ -15,4 +15,6 @@
     
 }
 
+@property double timeRemaining;
+
 @end

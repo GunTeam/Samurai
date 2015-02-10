@@ -11,4 +11,11 @@
 
 @implementation Bouquet
 
+-(id)initWithTime:(double)timeRemaining{
+    if ((self = [super init])) {
+        self.timeRemaining = timeRemaining;
+    }
+    return self;
+}
+
 @end

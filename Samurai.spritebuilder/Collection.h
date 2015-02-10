@@ -15,4 +15,6 @@
     
 }
 
+@property int lives;
+
 @end
