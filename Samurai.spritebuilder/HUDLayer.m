@@ -13,6 +13,10 @@
 
 @synthesize delegate;
 
+-(void)didLoadFromCCB{
+    
+}
+
 -(id)init{
     self = [super init];
     if (self) {

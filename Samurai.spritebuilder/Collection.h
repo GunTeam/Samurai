@@ -12,7 +12,8 @@
 
 
 @interface Collection : HUDLayer {
-    
+    CCSprite  *_positionTest;
+    CCNode *_collectionBar;
 }
 
 @property int STARTING_LIVES;

@@ -24,4 +24,6 @@
 
 @property (nonatomic, assign) id  delegate;
 
+-(void)didLoadFromCCB;
+
 @end
