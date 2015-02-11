@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Flower.h"
 
 //define the protocol for our delegate
 @protocol HUDDelegate <NSObject>
@@ -17,8 +18,8 @@
 @end
 
 
-@interface HUDLayer : CCNode {
-    
+@interface HUDLayer : CCNode <CCPhysicsCollisionDelegate> {
+    CCPhysicsNode *physicsNode;
 }
 
 @property (nonatomic, assign) id  delegate;

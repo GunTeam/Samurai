@@ -13,6 +13,24 @@
 
 @synthesize delegate;
 
+-(id)init{
+    self = [super init];
+    if (self) {
+        physicsNode = [[CCPhysicsNode alloc]init];
+        physicsNode.collisionDelegate = self;
+    }
+    
+    return self;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower typeB:(CCNode *)nodeB{
+
+    
+    
+    return true;
+}
+
+
 -(void)buttonPress{
     [delegate gameOver];
 }
