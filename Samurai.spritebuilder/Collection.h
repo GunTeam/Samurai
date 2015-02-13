@@ -13,7 +13,8 @@
 
 @interface Collection : HUDLayer {
     CCSprite  *_positionTest;
-    CCNode *_collectionBar;
+    CCNode *_collectionBar,*_lifeBar;
+    CCSprite *_heart1,*_heart2,*_heart3; //these will be custom life sprites with animations later
 }
 
 @property int STARTING_LIVES;
