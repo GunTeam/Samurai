@@ -18,6 +18,8 @@
     if (self) {
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
+        
+        
         flowerLayer = -1;
     }
     
@@ -25,7 +27,19 @@
 }
 
 -(void)didLoadFromCCB{
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
     
+    CGFloat screenScale = [[UIScreen mainScreen]scale];
+
+    screenSize = CGPointMake(screenBound.size.width*screenScale, screenBound.size.height*screenScale);
+    
+    CCLOG(@"didLoadCCB");
+    CCLOG(@"width = %f",screenSize.x);
+    CCLOG(@"height = %f",screenSize.y);
+    
+    Flower *flower = (Flower*)[CCBReader load:@"Flowers/Daisy"];
+    flower.position = CGPointMake(screenSize.x/2, screenSize.y/2);
+    [physicsNode addChild:flower];
 }
 
 -(void)spawnFlower:(CCTime)dt{
