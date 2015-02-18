@@ -12,7 +12,21 @@
 @implementation Arrangement
 
 -(void) didLoadFromCCB{
+    possibleFlowers = @["daisy"];
     
+}
+
+-(void)spawnFlower:(CCTime)dt{
+    [super spawnFlower:dt];
+    //take care of custom spawning
+    
+    
+    
+    NSString flowerToSpawn =
+    Flower *flower = (Flower*)[CCBReader load:flowerToSpawn];
+    
+    [self addChild: flower z:flowerLayer];
+    flowerLayer--;
 }
 
 @end

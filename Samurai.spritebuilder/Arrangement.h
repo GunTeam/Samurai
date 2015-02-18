@@ -11,7 +11,7 @@
 #import "HUDLayer.h"
 
 @interface Arrangement : HUDLayer {
-    
+    NSArray possibleFlowers;
 }
 
 @property int lives;
