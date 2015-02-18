@@ -11,7 +11,7 @@
 #import "HUDLayer.h"
 
 @interface Arrangement : HUDLayer {
-    
+    CCSprite *_heart1,*_heart2,*_heart3;
 }
 
 @property int lives;
