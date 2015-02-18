@@ -12,17 +12,18 @@
 @implementation Arrangement
 
 -(void) didLoadFromCCB{
-    possibleFlowers = @["daisy"];
+    possibleFlowers = @[@"daisy"];
     
 }
-
 -(void)spawnFlower:(CCTime)dt{
     [super spawnFlower:dt];
     //take care of custom spawning
     
     
+    int numPossibleFlowers = [possibleFlowers count];
+    int flowerSpawnFlag = arc4random()%numPossibleFlowers;
     
-    NSString flowerToSpawn =
+    NSString *flowerToSpawn = [possibleFlowers objectAtIndex:flowerSpawnFlag];
     Flower *flower = (Flower*)[CCBReader load:flowerToSpawn];
     
     [self addChild: flower z:flowerLayer];
