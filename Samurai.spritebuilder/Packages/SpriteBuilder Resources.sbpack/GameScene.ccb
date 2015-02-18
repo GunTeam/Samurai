@@ -194,7 +194,7 @@
 						<key>type</key>
 						<string>CCBFile</string>
 						<key>value</key>
-						<string>HUDTest.ccb</string>
+						<string>HUDs/Collection.ccb</string>
 					</dict>
 				</array>
 				<key>selected</key>
