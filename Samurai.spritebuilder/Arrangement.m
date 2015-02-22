@@ -18,7 +18,21 @@
     possibleFlowers = @[@"Flowers/Daisy",@"Flowers/Rose"];
     self.flowerSpeed = 150;
     
+    randomSequence = [[NSMutableArray alloc]init];
+    
+    [self createRandomDesiredSequence:25];
+    
 }
+
+-(void)createRandomDesiredSequence:(int)length{
+    for (int i = 0; i<length; i++) {
+        int flowerNumber = arc4random()%[possibleFlowers count];
+        [randomSequence addObject:[possibleFlowers objectAtIndex:flowerNumber]];
+    }
+    
+    [self displayFlowers];
+}
+
 -(void)spawnFlower:(CCTime)dt{
     [super spawnFlower:dt];
     //take care of custom spawning
@@ -37,7 +51,63 @@
     [flower launch];
 }
 
+-(void)displayFlowers{
+    Flower *primary = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
+    primary.anchorPoint = CGPointMake(1, 1);
+    primary.scale = .25;
+    [self addChild:primary];
+    primary.position = CGPointMake(screenSize.x/2.,screenSize.y/2.);
+    
+}
 
+
+-(void)acceptFlower:(CCSprite*)flowerSwiped{
+    Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
+    Flower *flowerWeChose = (Flower*) flowerSwiped;
+    
+    if(flowerWeChose == flowerWeWant){
+        //correctly accept
+        self.score += self.flowerBonus;
+        [randomSequence removeObject:flowerWeWant];
+    }
+    else{
+        //incorrectly accept
+        [self loseLife];
+    }
+    
+    [flowerWeChose removeFromParent];
+    [self displayFlowers];
+}
+
+-(void)rejectFlower:(CCSprite*)flowerSwiped{
+    Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
+    Flower *flowerWeChose = (Flower*) flowerSwiped;
+    
+    if(flowerWeChose == flowerWeWant){
+        //incorrectly reject
+        [self loseLife];
+    }
+    else if (flowerWeChose != flowerWeWant){
+        //correctly reject
+        self.score += self.flowerBonus;
+    }
+    
+    [flowerWeChose removeFromParent];
+    [self displayFlowers];
+
+}
+
+-(void)killEnemy:(CCSprite*)flowerSwiped{
+    
+}
+
+-(void)acceptPowerUp:(CCSprite*)flowerSwiped{
+    
+}
+
+-(void)loseLife{
+    self.lives -= 1;
+}
 
 
 @end

@@ -13,8 +13,6 @@
 @synthesize pattern, downwardVelocity, delegate;
 
 -(void) didLoadFromCCB{
-    CCLOG(@"Laura");
-    
     self.physicsBody.collisionType = @"flower";
     self.physicsBody.collisionGroup = @"flowers";
     downwardVelocity = 0;

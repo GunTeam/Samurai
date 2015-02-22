@@ -12,17 +12,19 @@
 @implementation HUDLayer
 
 @synthesize delegate;
-@synthesize flowerSpeed;
+@synthesize flowerSpeed, score, flowerBonus;
 
 -(id)init{
     self = [super init];
     if (self) {
-        CCLOG(@"Anna");
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
         [self addChild:physicsNode];
         flowerLayer = -1;
     }
+    
+    score = 0;
+    flowerBonus = 100;
     
     return self;
 }
@@ -64,8 +66,21 @@
     [delegate gameOver];
 }
 
--(void)swipe:(NSString *)direction withFlower:(Flower*)flower{
+-(void)delegateSwipe:(NSString *)direction withFlower:(CCSprite*)flower{
     CCLOG(direction);
+    if([direction isEqualToString:@"left"]){
+        [self rejectFlower:flower];
+    }
+    else if([direction isEqualToString:@"right"]){
+        [self acceptFlower:flower];
+    }
+    else if([direction isEqualToString:@"up"]){
+        [self killEnemy:flower];
+    }
+    else if([direction isEqualToString:@"down"]){
+        [self acceptPowerUp:flower];
+    }
+    
 }
 
 @end

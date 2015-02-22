@@ -12,6 +12,7 @@
 
 @interface Arrangement : HUDLayer {
     NSArray *possibleFlowers;
+    NSMutableArray *randomSequence;
     CCSprite *_heart1,*_heart2,*_heart3;
 }
 

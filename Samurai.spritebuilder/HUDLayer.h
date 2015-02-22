@@ -26,8 +26,16 @@
 
 @property (nonatomic, assign) id  delegate;
 @property float flowerSpeed;
+@property int score;
+@property int flowerBonus;
 
 -(void)didLoadFromCCB;
 -(void)spawnFlower:(CCTime)dt;
+-(void)acceptFlower:(CCSprite*)flowerSwiped;
+-(void)rejectFlower:(CCSprite*)flowerSwiped;
+-(void)killEnemy:(CCSprite*)flowerSwiped;
+-(void)acceptPowerUp:(CCSprite*)flowerSwiped;
+-(void)loseLife;
+
 
 @end
