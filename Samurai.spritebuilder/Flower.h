@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@protocol FlowerDelegate <NSObject>
+
+-(void)delegateSwipe:(NSString*)direction withFlower:(CCSprite*)flower;
+
+@end
+
 @interface Flower : CCSprite {
     UISwipeGestureRecognizer *swipeLeft, *swipeRight, *swipeUp,*swipeDown;
 }
@@ -18,5 +24,7 @@
 
 @property NSString *pattern;
 @property float downwardVelocity;
+@property (nonatomic, assign) id  delegate;
+
 
 @end

@@ -11,8 +11,12 @@
 
 @implementation Arrangement
 
+
 -(void) didLoadFromCCB{
-    possibleFlowers = @[@"daisy"];
+    [super didLoadFromCCB];
+    
+    possibleFlowers = @[@"Flowers/Daisy",@"Flowers/Rose"];
+    self.flowerSpeed = 150;
     
 }
 -(void)spawnFlower:(CCTime)dt{
@@ -22,12 +26,18 @@
     
     int numPossibleFlowers = [possibleFlowers count];
     int flowerSpawnFlag = arc4random()%numPossibleFlowers;
-    
     NSString *flowerToSpawn = [possibleFlowers objectAtIndex:flowerSpawnFlag];
-    Flower *flower = (Flower*)[CCBReader load:flowerToSpawn];
     
-    [self addChild: flower z:flowerLayer];
-    flowerLayer--;
+    
+    Flower *flower = (Flower*)[CCBReader load:flowerToSpawn];
+    flower.position = CGPointMake(screenSize.x/4.,screenSize.y/1.8);
+    flower.delegate = self;
+    [physicsNode addChild:flower z:flowerLayer];
+    [flower setDownwardVelocity: self.flowerSpeed];
+    [flower launch];
 }
+
+
+
 
 @end

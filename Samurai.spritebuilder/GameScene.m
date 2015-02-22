@@ -22,8 +22,6 @@
     
     _HUDLayer.delegate = self;
     
-    self.flowerSpeed = 50;
-    [self addFlower];
 }
 
 -(void) update:(CCTime)delta{
@@ -31,12 +29,7 @@
 }
 
 -(void) addFlower{
-    Daisy *daisy = (Daisy*)[CCBReader load:@"Flowers/Daisy"];
-    daisy.position = CGPointMake(screenWidth/2.,screenHeight/2.);
-    [daisy setDownwardVelocity: self.flowerSpeed];
-    [daisy launch];
-    [_physicsNode addChild:daisy];
-}
+    }
 
 -(void)gameOver{
     CCLOG(@"GameOver!!");

@@ -18,13 +18,14 @@
 @end
 
 
-@interface HUDLayer : CCNode <CCPhysicsCollisionDelegate> {
+@interface HUDLayer : CCNode <CCPhysicsCollisionDelegate,FlowerDelegate> {
     CCPhysicsNode *physicsNode;
     int flowerLayer;
     CGPoint screenSize;
 }
 
 @property (nonatomic, assign) id  delegate;
+@property float flowerSpeed;
 
 -(void)didLoadFromCCB;
 -(void)spawnFlower:(CCTime)dt;

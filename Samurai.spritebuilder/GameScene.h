@@ -20,6 +20,5 @@
 -(void) didLoadFromCCB;
 
 @property NSString *gameType;
-@property float flowerSpeed;
 
 @end

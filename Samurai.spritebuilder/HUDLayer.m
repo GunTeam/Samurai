@@ -12,14 +12,15 @@
 @implementation HUDLayer
 
 @synthesize delegate;
+@synthesize flowerSpeed;
 
 -(id)init{
     self = [super init];
     if (self) {
+        CCLOG(@"Anna");
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
-        
-        
+        [self addChild:physicsNode];
         flowerLayer = -1;
     }
     
@@ -37,9 +38,10 @@
     CCLOG(@"width = %f",screenSize.x);
     CCLOG(@"height = %f",screenSize.y);
     
-    Flower *flower = (Flower*)[CCBReader load:@"Flowers/Daisy"];
-    flower.position = CGPointMake(screenSize.x/2, screenSize.y/2);
-    [physicsNode addChild:flower];
+    [self schedule:@selector(spawnFlower:) interval:1];
+//    Flower *flower = (Flower*)[CCBReader load:@"Flowers/Daisy"];
+//    flower.position = CGPointMake(screenSize.x/2, screenSize.y/2);
+//    [physicsNode addChild:flower];
 }
 
 -(void)spawnFlower:(CCTime)dt{
@@ -60,6 +62,10 @@
 
 -(void)buttonPress{
     [delegate gameOver];
+}
+
+-(void)swipe:(NSString *)direction withFlower:(Flower*)flower{
+    CCLOG(direction);
 }
 
 @end

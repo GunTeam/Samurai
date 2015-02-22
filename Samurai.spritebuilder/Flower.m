@@ -10,9 +10,11 @@
 
 
 @implementation Flower
-@synthesize pattern, downwardVelocity;
+@synthesize pattern, downwardVelocity, delegate;
 
 -(void) didLoadFromCCB{
+    CCLOG(@"Laura");
+    
     self.physicsBody.collisionType = @"flower";
     self.physicsBody.collisionGroup = @"flowers";
     downwardVelocity = 0;
@@ -37,7 +39,8 @@
 
 //called when there's a left swipe
 - (Boolean)swipeLeft {
-    
+    [self swipe:@"left"];
+
     //check if it should be rejected
     //if so, return true
     //else, return false
@@ -45,6 +48,8 @@
 
 //called when there's a right swipe
 - (Boolean)swipeRight {
+    [self swipe:@"right"];
+
     //check if it should be accepted
     //if so, return true
     //else, return false
@@ -52,6 +57,8 @@
 
 //called when there's a down swipe
 - (Boolean)swipeDown {
+    [self swipe:@"down"];
+
     //check if it's a powerup
     //if so, return true
     //else, return false
@@ -59,9 +66,15 @@
 
 //called when there's an up swipe
 - (Boolean)swipeUp {
+    [self swipe:@"up"];
     //check if it's an enemy
     //if so, return true
     //else, return false
+}
+
+-(void)swipe:(NSString*)direction{
+    [delegate delegateSwipe:direction withFlower:self];
+    
 }
 
 -(void) launch{
