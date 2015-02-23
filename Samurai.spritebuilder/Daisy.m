@@ -17,4 +17,8 @@
     //what do we set about each flower differently? hm
 }
 
+-(Boolean)swipeDown{
+    CCLOG(@"Daisy");
+}
+
 @end

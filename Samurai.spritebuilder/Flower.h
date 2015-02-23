@@ -17,10 +17,12 @@
 
 @interface Flower : CCSprite {
     UISwipeGestureRecognizer *swipeLeft, *swipeRight, *swipeUp,*swipeDown;
+    CGPoint startPoint,endPoint;
 }
 
 -(void) didLoadFromCCB;
 -(void) launch;
+-(Boolean)swipeDown;
 
 @property NSString *pattern;
 @property float downwardVelocity;

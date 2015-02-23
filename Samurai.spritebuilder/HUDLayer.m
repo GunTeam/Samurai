@@ -19,7 +19,7 @@
     if (self) {
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
-        [self addChild:physicsNode];
+        [self addChild:physicsNode z:-1];
         flowerLayer = -1;
     }
     
@@ -30,6 +30,9 @@
 }
 
 -(void)didLoadFromCCB{
+    self.userInteractionEnabled = false;
+    self.multipleTouchEnabled = false;
+    
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     
     CGFloat screenScale = [[UIScreen mainScreen]scale];
@@ -78,7 +81,7 @@
         [self killEnemy:flower];
     }
     else if([direction isEqualToString:@"down"]){
-        [self acceptPowerUp:flower];
+    [self acceptPowerUp:flower];
     }
     
 }

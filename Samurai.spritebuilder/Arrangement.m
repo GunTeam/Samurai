@@ -65,12 +65,14 @@
     Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
     Flower *flowerWeChose = (Flower*) flowerSwiped;
     
-    if(flowerWeChose == flowerWeWant){
+    if([flowerWeChose isEqual:flowerWeWant]){
+        CCLOG(@"Correct accept");
         //correctly accept
         self.score += self.flowerBonus;
         [randomSequence removeObject:flowerWeWant];
     }
     else{
+        CCLOG(@"Incorrect accept");
         //incorrectly accept
         [self loseLife];
     }
@@ -83,12 +85,15 @@
     Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
     Flower *flowerWeChose = (Flower*) flowerSwiped;
     
-    if(flowerWeChose == flowerWeWant){
-        //incorrectly reject
+    
+    if([flowerWeChose isEqual:flowerWeWant]){
+        //incorrectly rejected
+        CCLOG(@"Incorrect reject");
         [self loseLife];
     }
-    else if (flowerWeChose != flowerWeWant){
+    else{
         //correctly reject
+        CCLOG(@"correct reject");
         self.score += self.flowerBonus;
     }
     
