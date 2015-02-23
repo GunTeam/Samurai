@@ -22,6 +22,7 @@
 
 -(void) didLoadFromCCB;
 -(void) launch;
+-(NSString *)getType;
 -(Boolean)swipeDown;
 
 @property NSString *pattern;

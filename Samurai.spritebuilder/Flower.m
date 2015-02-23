@@ -99,16 +99,33 @@
     }
 }
 
+-(void)touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
+    CGPoint currentShotPoint =  CGPointMake(-startPoint.x + endPoint.x, -startPoint.y + endPoint.y );
+    float theta = atan2f(currentShotPoint.x, currentShotPoint.y)*180./M_PI;
+    CCLOG(@"%f",theta);
+    if (abs(theta)>135) {
+        [self swipeDown];
+    } else if (theta >45){
+        [self swipeRight];
+    } else if (theta > -45){
+        [self swipeUp];
+    } else {
+        [self swipeLeft];
+    }
+}
+
 -(void)swipe:(NSString*)direction{
     [delegate delegateSwipe:direction withFlower:self];
     
 }
 
+-(NSString *)getType{
+    return @"Flower";
+}
+
 -(void) launch{
     CGPoint velVector = CGPointMake(0, -downwardVelocity);
     self.physicsBody.velocity = velVector;
-    
-    
     
 }
 

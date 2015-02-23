@@ -21,4 +21,8 @@
     CCLOG(@"Daisy");
 }
 
+-(NSString *)getType{
+    return @"Daisy";
+}
+
 @end

@@ -14,6 +14,8 @@
     NSArray *possibleFlowers;
     NSMutableArray *randomSequence;
     CCSprite *_heart1,*_heart2,*_heart3;
+    NSArray *barOfHearts;
+    Flower *primary,*secondary;
 }
 
 @property int lives;

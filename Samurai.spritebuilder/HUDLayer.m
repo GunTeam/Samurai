@@ -19,6 +19,7 @@
     if (self) {
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
+        physicsNode.debugDraw = true;
         [self addChild:physicsNode z:-1];
         flowerLayer = -1;
     }
@@ -38,15 +39,14 @@
     CGFloat screenScale = [[UIScreen mainScreen]scale];
 
     screenSize = CGPointMake(screenBound.size.width*screenScale, screenBound.size.height*screenScale);
+
+    [[CCDirector sharedDirector]setDisplayStats:true];
     
     CCLOG(@"didLoadCCB");
     CCLOG(@"width = %f",screenSize.x);
     CCLOG(@"height = %f",screenSize.y);
     
     [self schedule:@selector(spawnFlower:) interval:1];
-//    Flower *flower = (Flower*)[CCBReader load:@"Flowers/Daisy"];
-//    flower.position = CGPointMake(screenSize.x/2, screenSize.y/2);
-//    [physicsNode addChild:flower];
 }
 
 -(void)spawnFlower:(CCTime)dt{
@@ -57,10 +57,8 @@
     //the actual spawning of the flower is handled in the individual classes
 }
 
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower typeB:(CCNode *)nodeB{
-
-    
-    
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer{
+    CCLOG(@"Crash!");
     return true;
 }
 
