@@ -22,6 +22,7 @@
     CCPhysicsNode *physicsNode;
     int flowerLayer;
     CGPoint screenSize;
+    CGRect *bottomRectangle;
 }
 
 @property (nonatomic, assign) id  delegate;
@@ -36,6 +37,7 @@
 -(void)killEnemy:(CCSprite*)flowerSwiped;
 -(void)acceptPowerUp:(CCSprite*)flowerSwiped;
 -(void)loseLife;
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer;
 
 
 @end

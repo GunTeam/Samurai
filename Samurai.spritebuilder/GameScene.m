@@ -12,6 +12,9 @@
 @implementation GameScene
 
 -(void) didLoadFromCCB{
+    self.userInteractionEnabled = false;
+    self.multipleTouchEnabled = false;
+    
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
     screenWidth = screenSize.width;

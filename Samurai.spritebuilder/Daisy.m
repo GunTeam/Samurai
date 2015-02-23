@@ -17,4 +17,12 @@
     //what do we set about each flower differently? hm
 }
 
+-(Boolean)swipeDown{
+    CCLOG(@"Daisy");
+}
+
+-(NSString *)getType{
+    return @"Daisy";
+}
+
 @end

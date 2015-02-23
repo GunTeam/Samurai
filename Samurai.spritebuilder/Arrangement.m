@@ -15,12 +15,20 @@
 -(void) didLoadFromCCB{
     [super didLoadFromCCB];
     
+    self.lives = 3;
+    
     possibleFlowers = @[@"Flowers/Daisy",@"Flowers/Rose"];
     self.flowerSpeed = 150;
     
     randomSequence = [[NSMutableArray alloc]init];
     
-    [self createRandomDesiredSequence:25];
+    [self createRandomDesiredSequence:5];
+    
+    CCNode *destroyer = [CCBReader load:@"FlowerDestroyer"];
+    destroyer.position = CGPointMake(screenSize.x/4.,-100);
+    [physicsNode addChild:destroyer];
+    
+    barOfHearts = @[_heart1,_heart2,_heart3];
     
 }
 
@@ -37,7 +45,6 @@
     [super spawnFlower:dt];
     //take care of custom spawning
     
-    
     int numPossibleFlowers = [possibleFlowers count];
     int flowerSpawnFlag = arc4random()%numPossibleFlowers;
     NSString *flowerToSpawn = [possibleFlowers objectAtIndex:flowerSpawnFlag];
@@ -52,11 +59,26 @@
 }
 
 -(void)displayFlowers{
-    Flower *primary = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
+    [primary removeFromParentAndCleanup:true];
+    primary = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
     primary.anchorPoint = CGPointMake(1, 1);
-    primary.scale = .25;
+    primary.scale = .35;
     [self addChild:primary];
     primary.position = CGPointMake(screenSize.x/2.,screenSize.y/2.);
+    
+    //remove the secondary here
+    //if there is another flower in the array, it will be redisplayed
+    //else the user will see they have only one flower left
+    [secondary removeFromParentAndCleanup:true];
+    
+    if ([randomSequence count]>1) {
+        secondary = (Flower*)[CCBReader load:[randomSequence objectAtIndex:1]];
+        secondary.anchorPoint = CGPointMake(1, 1);
+        secondary.scale = .25;
+        [self addChild:secondary];
+        int flowerGap = 10;
+        secondary.position = CGPointMake(screenSize.x/2.,screenSize.y/2. - primary.contentSize.height*primary.scale - flowerGap);
+    }
     
 }
 
@@ -65,30 +87,41 @@
     Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
     Flower *flowerWeChose = (Flower*) flowerSwiped;
     
-    if(flowerWeChose == flowerWeWant){
+    if([[flowerWeChose getType] isEqualToString:[flowerWeWant getType]]){
+        CCLOG(@"Correct accept");
         //correctly accept
         self.score += self.flowerBonus;
-        [randomSequence removeObject:flowerWeWant];
+        [randomSequence removeObjectAtIndex:0];
     }
     else{
+        CCLOG(@"Incorrect accept");
         //incorrectly accept
         [self loseLife];
     }
     
     [flowerWeChose removeFromParent];
-    [self displayFlowers];
+    
+    //if there's nothing left to match, the user has won
+    if ([randomSequence count] == 0) {
+        [self winGame];
+    } else {
+        [self displayFlowers];
+    }
 }
 
 -(void)rejectFlower:(CCSprite*)flowerSwiped{
     Flower *flowerWeWant = (Flower*)[CCBReader load:[randomSequence objectAtIndex:0]];
     Flower *flowerWeChose = (Flower*) flowerSwiped;
     
-    if(flowerWeChose == flowerWeWant){
-        //incorrectly reject
+    
+    if([[flowerWeChose getType] isEqualToString:[flowerWeWant getType]]){
+        //incorrectly rejected
+        CCLOG(@"Incorrect reject");
         [self loseLife];
     }
-    else if (flowerWeChose != flowerWeWant){
+    else{
         //correctly reject
+        CCLOG(@"correct reject");
         self.score += self.flowerBonus;
     }
     
@@ -105,8 +138,29 @@
     
 }
 
+-(void)winGame{
+    //disable swipes
+}
+
+-(void)loseGame{
+    //disable swipes
+}
+
 -(void)loseLife{
     self.lives -= 1;
+    if (self.lives < 0) {
+        [self loseGame];
+    } else {
+        CCSprite *currentHeart = [barOfHearts objectAtIndex:self.lives];
+        currentHeart.visible = false;
+    }
+    
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer{
+    [self loseLife];
+    [flower removeFromParentAndCleanup:true];
+    return [super ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer];
 }
 
 
