@@ -98,6 +98,7 @@
 		CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151A1A85C7DB00F4AA1A /* Arrangement.m */; };
 		CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151D1A85C7E400F4AA1A /* Collection.m */; };
 		CC4C15211A85C7F600F4AA1A /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C15201A85C7F600F4AA1A /* Bouquet.m */; };
+		CCB49A4B1A9CFA2F00E7F0B1 /* TouchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB49A4A1A9CFA2F00E7F0B1 /* TouchNode.m */; };
 		CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */; };
 /* End PBXBuildFile section */
 
@@ -123,26 +124,12 @@
 			remoteGlobalIDString = D2FEB74F194F6C9E00FC0574;
 			remoteInfo = cocos2dAndroid;
 		};
-		7A97910119E62E40001FFC4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5BF3267A195F8D8800D9A51A;
-			remoteInfo = cocos2dJava;
-		};
 		7A97910319E62E40001FFC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7A4037A819E37038007B6E8F;
 			remoteInfo = "cocos2d-mac";
-		};
-		7A97910519E62E4C001FFC4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BF32679195F8D8800D9A51A;
-			remoteInfo = cocos2dJava;
 		};
 		7A97910F19E6319A001FFC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -158,19 +145,19 @@
 			remoteGlobalIDString = 7A4037A719E37038007B6E8F;
 			remoteInfo = "cocos2d-mac";
 		};
-		7A97911F19E63219001FFC4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BF32679195F8D8800D9A51A;
-			remoteInfo = cocos2dJava;
-		};
 		7A97912119E6321C001FFC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D2FEB60D194F6C9E00FC0574;
 			remoteInfo = cocos2dAndroid;
+		};
+		CCB49A471A9CFA1100E7F0B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B7E7DE341A76DB7D004234B7;
+			remoteInfo = cocos2dMacFramework;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -247,6 +234,8 @@
 		CC4C151D1A85C7E400F4AA1A /* Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection.m; sourceTree = "<group>"; };
 		CC4C151F1A85C7F600F4AA1A /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bouquet.h; sourceTree = "<group>"; };
 		CC4C15201A85C7F600F4AA1A /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bouquet.m; sourceTree = "<group>"; };
+		CCB49A491A9CFA2F00E7F0B1 /* TouchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchNode.h; sourceTree = "<group>"; };
+		CCB49A4A1A9CFA2F00E7F0B1 /* TouchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchNode.m; sourceTree = "<group>"; };
 		CCCA5AA41A89C5D6002D8932 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
@@ -452,8 +441,8 @@
 			children = (
 				7A9790FE19E62E40001FFC4D /* libcocos2d.a */,
 				7A97910019E62E40001FFC4D /* libcocos2dAndroid.a */,
-				7A97910219E62E40001FFC4D /* cocos2dJava.jar */,
 				7A97910419E62E40001FFC4D /* libcocos2d-mac.a */,
+				CCB49A481A9CFA1100E7F0B1 /* cocos2dMacFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,6 +469,7 @@
 			children = (
 				BA5B74791A85A3F600D154ED /* Scenes */,
 				CC4C15141A85C31100F4AA1A /* Game Modes */,
+				CCB49A441A9CFA1000E7F0B1 /* Custom Classes */,
 				BA5B747A1A85A3FE00D154ED /* Sprites */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -615,6 +605,15 @@
 			name = "Game Modes";
 			sourceTree = "<group>";
 		};
+		CCB49A441A9CFA1000E7F0B1 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CCB49A491A9CFA2F00E7F0B1 /* TouchNode.h */,
+				CCB49A4A1A9CFA2F00E7F0B1 /* TouchNode.m */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -628,7 +627,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7A97910619E62E4C001FFC4D /* PBXTargetDependency */,
 			);
 			name = "Samurai Java";
 			productName = "Samurai Java";
@@ -666,7 +664,6 @@
 			);
 			dependencies = (
 				7A97912219E6321C001FFC4D /* PBXTargetDependency */,
-				7A97912019E63219001FFC4D /* PBXTargetDependency */,
 				5B121032197485D1004C1E1D /* PBXTargetDependency */,
 			);
 			name = "Samurai Android";
@@ -757,18 +754,18 @@
 			remoteRef = 7A9790FF19E62E40001FFC4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7A97910219E62E40001FFC4D /* cocos2dJava.jar */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.jar;
-			path = cocos2dJava.jar;
-			remoteRef = 7A97910119E62E40001FFC4D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		7A97910419E62E40001FFC4D /* libcocos2d-mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d-mac.a";
 			remoteRef = 7A97910319E62E40001FFC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CCB49A481A9CFA1100E7F0B1 /* cocos2dMacFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = cocos2dMacFramework.framework;
+			remoteRef = CCB49A471A9CFA1100E7F0B1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -926,6 +923,7 @@
 				CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */,
 				CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */,
 				CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */,
+				CCB49A4B1A9CFA2F00E7F0B1 /* TouchNode.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				BA79B3D01A83F9CF004E68DE /* GameScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
@@ -941,11 +939,6 @@
 			target = 5B121020197484A3004C1E1D /* Samurai Java */;
 			targetProxy = 5B121031197485D1004C1E1D /* PBXContainerItemProxy */;
 		};
-		7A97910619E62E4C001FFC4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = cocos2dJava;
-			targetProxy = 7A97910519E62E4C001FFC4D /* PBXContainerItemProxy */;
-		};
 		7A97911019E6319A001FFC4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "cocos2d-ios";
@@ -955,11 +948,6 @@
 			isa = PBXTargetDependency;
 			name = "cocos2d-mac";
 			targetProxy = 7A97911519E631A1001FFC4D /* PBXContainerItemProxy */;
-		};
-		7A97912019E63219001FFC4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = cocos2dJava;
-			targetProxy = 7A97911F19E63219001FFC4D /* PBXContainerItemProxy */;
 		};
 		7A97912219E6321C001FFC4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
