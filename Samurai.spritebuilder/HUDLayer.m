@@ -19,7 +19,7 @@
     if (self) {
         physicsNode = [[CCPhysicsNode alloc]init];
         physicsNode.collisionDelegate = self;
-        physicsNode.debugDraw = true;
+//        physicsNode.debugDraw = true;
         [self addChild:physicsNode z:-1];
         flowerLayer = -1;
     }
@@ -40,8 +40,12 @@
 
     screenSize = CGPointMake(screenBound.size.width*screenScale, screenBound.size.height*screenScale);
 
-    [[CCDirector sharedDirector]setDisplayStats:true];
-    
+//    [[CCDirector sharedDirectdor]setDisplayStats:true];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        screenSize.x = screenSize.x/2;
+        screenSize.y = screenSize.y/2;
+    }
     CCLOG(@"didLoadCCB");
     CCLOG(@"width = %f",screenSize.x);
     CCLOG(@"height = %f",screenSize.y);

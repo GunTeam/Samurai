@@ -11,6 +11,9 @@
 
 @implementation Arrangement
 
+-(void)Reset{
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameScene"]];
+}
 
 -(void) didLoadFromCCB{
     [super didLoadFromCCB];
@@ -22,7 +25,7 @@
     
     randomSequence = [[NSMutableArray alloc]init];
     
-    [self createRandomDesiredSequence:5];
+    [self createRandomDesiredSequence:15];
     
     CCNode *destroyer = [CCBReader load:@"FlowerDestroyer"];
     destroyer.position = CGPointMake(screenSize.x/4.,-100);
