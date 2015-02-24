@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "TouchNode.h"
 
 @protocol FlowerDelegate <NSObject>
 
@@ -18,6 +19,7 @@
 @interface Flower : CCSprite {
     UISwipeGestureRecognizer *swipeLeft, *swipeRight, *swipeUp,*swipeDown;
     CGPoint startPoint,endPoint;
+    TouchNode *_touchNode;
 }
 
 -(void) didLoadFromCCB;

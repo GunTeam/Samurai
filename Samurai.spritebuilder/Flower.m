@@ -18,7 +18,9 @@
     downwardVelocity = 0;
     
     self.userInteractionEnabled = true;
-        
+    
+    _touchNode.delegate = self;
+            
 //    //listen for swipes left
 //    swipeLeft= [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
 //    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -78,6 +80,7 @@
 
 -(void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     startPoint = [touch locationInNode:self];
+    CCLOG(@"touched the daisy");
 }
 
 -(void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
