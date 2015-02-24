@@ -12,9 +12,12 @@
 
 
 @interface Bouquet : HUDLayer {
-    
+    NSMutableArray *unmatchedFlowersInThisBouquet;
 }
 
 @property double timeRemaining;
+@property double timeBonus;
+@property NSArray *bouquetToMatch;
+@property NSArray *possibleFlowers;
 
 @end
