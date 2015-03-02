@@ -66,11 +66,6 @@
     return true;
 }
 
-
--(void)buttonPress{
-    [delegate gameOver];
-}
-
 -(void)delegateSwipe:(NSString *)direction withFlower:(CCSprite*)flower{
     CCLOG(direction);
     if([direction isEqualToString:@"left"]){
@@ -86,6 +81,11 @@
     [self acceptPowerUp:flower];
     }
     
+}
+
+-(void)loseGame{
+    self.userInteractionEnabled = false;
+    [delegate gameOver];
 }
 
 @end

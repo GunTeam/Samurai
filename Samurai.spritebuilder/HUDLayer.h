@@ -38,6 +38,6 @@
 -(void)acceptPowerUp:(CCSprite*)flowerSwiped;
 -(void)loseLife;
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer;
-
+-(void)loseGame;
 
 @end

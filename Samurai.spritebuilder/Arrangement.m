@@ -147,10 +147,14 @@
 
 -(void)loseGame{
     //disable swipes
+    [super loseGame];
+    
 }
 
 -(void)loseLife{
     self.lives -= 1;
+    //lose game if no lives are left
+    //don't do anything if you've already lost
     if (self.lives < 0) {
         [self loseGame];
     } else {
