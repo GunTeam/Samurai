@@ -32,10 +32,11 @@
 }
 
 -(void) addFlower{
-    }
+    
+}
 
 -(void)gameOver{
-    CCLOG(@"GameOver!!");
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameOver"]];
 }
 
 @end

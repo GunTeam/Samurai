@@ -5,4 +5,8 @@
     
 }
 
+-(void)Play{
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameScene"]];
+}
+
 @end

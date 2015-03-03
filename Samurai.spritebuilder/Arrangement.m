@@ -83,6 +83,8 @@
         secondary.position = CGPointMake(screenSize.x/2.,screenSize.y/2. - primary.contentSize.height*primary.scale - flowerGap);
     }
     
+    _flowersLeft.string = [NSString stringWithFormat:@"Flowers Left: %lu",(unsigned long)[randomSequence count]];
+    
 }
 
 
@@ -143,14 +145,20 @@
 
 -(void)winGame{
     //disable swipes
+    self.userInteractionEnabled = false;
+    
 }
 
 -(void)loseGame{
     //disable swipes
+    [super loseGame];
+    
 }
 
 -(void)loseLife{
     self.lives -= 1;
+    //lose game if no lives are left
+    //don't do anything if you've already lost
     if (self.lives < 0) {
         [self loseGame];
     } else {
