@@ -33,6 +33,7 @@
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = false;
     self.multipleTouchEnabled = false;
+    self.touchesEnabled = true;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     
@@ -68,6 +69,7 @@
 
 -(void)delegateSwipe:(NSString *)direction withFlower:(CCSprite*)flower{
     CCLOG(direction);
+    if (self.touchesEnabled){
     if([direction isEqualToString:@"left"]){
         [self rejectFlower:flower];
     }
@@ -80,12 +82,17 @@
     else if([direction isEqualToString:@"down"]){
     [self acceptPowerUp:flower];
     }
-    
+    }
+}
+
+-(void)winGame{
+    self.touchesEnabled = false;
+    [delegate gameWin];
 }
 
 -(void)loseGame{
-    self.userInteractionEnabled = false;
-    [delegate gameOver];
+    self.touchesEnabled = false;
+    [delegate gameLose];
 }
 
 @end

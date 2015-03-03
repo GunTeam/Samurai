@@ -144,13 +144,11 @@
 }
 
 -(void)winGame{
-    //disable swipes
-    self.userInteractionEnabled = false;
+    [super winGame];
     
 }
 
 -(void)loseGame{
-    //disable swipes
     [super loseGame];
     
 }

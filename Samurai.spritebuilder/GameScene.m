@@ -35,7 +35,11 @@
     
 }
 
--(void)gameOver{
+-(void)gameLose{
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameOver"]];
+}
+
+-(void)gameWin{
     [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameOver"]];
 }
 

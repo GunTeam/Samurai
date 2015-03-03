@@ -269,7 +269,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Samuretry</string>
+							<string>Samutry Again</string>
 							<false/>
 						</array>
 					</dict>
@@ -877,8 +877,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

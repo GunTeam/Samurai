@@ -13,7 +13,8 @@
 //define the protocol for our delegate
 @protocol HUDDelegate <NSObject>
 
--(void)gameOver;
+-(void)gameLose;
+-(void)gameWin;
 
 @end
 
@@ -29,6 +30,7 @@
 @property float flowerSpeed;
 @property int score;
 @property int flowerBonus;
+@property bool touchesEnabled;
 
 -(void)didLoadFromCCB;
 -(void)spawnFlower:(CCTime)dt;
@@ -39,5 +41,6 @@
 -(void)loseLife;
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer;
 -(void)loseGame;
+-(void)winGame;
 
 @end
