@@ -95,6 +95,7 @@
 		BA5B74771A85A2B800D154ED /* Daisy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5B74761A85A2B700D154ED /* Daisy.m */; };
 		BA79B3D01A83F9CF004E68DE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79B3CF1A83F9CF004E68DE /* GameScene.m */; };
 		BA79B3D41A83FA0B004E68DE /* Flower.m in Sources */ = {isa = PBXBuildFile; fileRef = BA79B3D31A83FA0B004E68DE /* Flower.m */; };
+		CC049C261AA5F49B006F3A61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC049C251AA5F49B006F3A61 /* Images.xcassets */; };
 		CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151A1A85C7DB00F4AA1A /* Arrangement.m */; };
 		CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151D1A85C7E400F4AA1A /* Collection.m */; };
 		CC4C15211A85C7F600F4AA1A /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C15201A85C7F600F4AA1A /* Bouquet.m */; };
@@ -229,6 +230,7 @@
 		BA79B3CF1A83F9CF004E68DE /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		BA79B3D21A83FA0B004E68DE /* Flower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flower.h; sourceTree = "<group>"; };
 		BA79B3D31A83FA0B004E68DE /* Flower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flower.m; sourceTree = "<group>"; };
+		CC049C251AA5F49B006F3A61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Samurai iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		CC4C15191A85C7DB00F4AA1A /* Arrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrangement.h; sourceTree = "<group>"; };
 		CC4C151A1A85C7DB00F4AA1A /* Arrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrangement.m; sourceTree = "<group>"; };
 		CC4C151C1A85C7E400F4AA1A /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection.h; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC049C251AA5F49B006F3A61 /* Images.xcassets */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -826,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
+				CC049C261AA5F49B006F3A61 /* Images.xcassets in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
@@ -1285,6 +1289,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1320,6 +1326,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

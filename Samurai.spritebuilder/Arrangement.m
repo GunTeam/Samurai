@@ -83,6 +83,8 @@
         secondary.position = CGPointMake(screenSize.x/2.,screenSize.y/2. - primary.contentSize.height*primary.scale - flowerGap);
     }
     
+    _flowersLeft.string = [NSString stringWithFormat:@"Flowers Left: %lu",(unsigned long)[randomSequence count]];
+    
 }
 
 
@@ -143,6 +145,8 @@
 
 -(void)winGame{
     //disable swipes
+    self.userInteractionEnabled = false;
+    
 }
 
 -(void)loseGame{

@@ -16,6 +16,7 @@
     CCSprite *_heart1,*_heart2,*_heart3;
     NSArray *barOfHearts;
     Flower *primary,*secondary;
+    CCLabelTTF *_flowersLeft;
 }
 
 @property int lives;
