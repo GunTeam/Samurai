@@ -26,6 +26,8 @@
     
     matchArray = [[NSMutableArray alloc]init];
     
+    self.multiplier = 1;
+    
     
 }
 
@@ -64,19 +66,28 @@
             CCLOG(@"all matched");
             if ([[flowerSwiped getType]  isEqual: @"Flowers/Rose"]) {
                 [self addLife];
+                [_matchBar showLabelWithText:@"Life!" ofColor:[CCColor colorWithCcColor3b:ccRED]];
+            } else if ([[flowerSwiped getType]  isEqual: @"Flowers/Lotus"]){
+                [_matchBar showLabelWithText:@"Time!" ofColor:[CCColor colorWithCcColor3b:ccYELLOW]];
+                
+            } else if([[flowerSwiped getType]  isEqual: @"Flowers/ForgetMeNot"]){
+                [_matchBar showLabelWithText:@"LevelUp!" ofColor:[CCColor colorWithCcColor3b:ccBLUE]];
+                self.multiplier++;
+                self.flowerSpeed += 20;
             }
         } else if /*if it's an all same match, give appropriate power-up*/([matchArray objectAtIndex:0] != [matchArray objectAtIndex:1] && [matchArray objectAtIndex:1] != [flowerSwiped getType] && [matchArray objectAtIndex:0] != [flowerSwiped getType]){
             //give the player the points
             CCLOG(@"all different");
-
+            [_matchBar showLabelWithText:[NSString stringWithFormat:@"100x%d!",self.multiplier] ofColor:[CCColor colorWithCcColor3b:ccc3(0, 100, 0)]];
+            self.score += 100 * self.multiplier;
         } else /*it was a miss*/{
             [self loseLife];
+            [_matchBar showLabelWithText:@"Bad!" ofColor:[CCColor colorWithCcColor3b:ccc3(100, 0, 0)]];
             CCLOG(@"life lost");
             //do something which tells player they lost life because of bad match
         }
         [_matchBar clearBar];
         [matchArray removeAllObjects];
-        //reset visual array of flowers
     }
     
 }

@@ -29,5 +29,7 @@
 }
 
 @property int lives;
+@property int multiplier;
+@property int score;
 
 @end

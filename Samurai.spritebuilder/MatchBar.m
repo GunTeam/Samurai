@@ -51,4 +51,12 @@ float flowerScale = .25;
     self.flowerNumber = 0;
 }
 
+-(void)showLabelWithText:(NSString*)text ofColor:(CCColor*)color{
+    CustomLabel *label = [CustomLabel labelWithString:text fontName:@"Arial" fontSize:30];
+    label.color = color;
+    label.anchorPoint = CGPointMake(.5, 0);
+    label.position = CGPointMake(.5*self.contentSizeInPoints.width, self.contentSizeInPoints.height);
+    [self addChild:label];
+}
+
 @end

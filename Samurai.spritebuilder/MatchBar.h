@@ -20,5 +20,6 @@
 
 -(void)addToDisplay:(NSString*)flowerName;
 -(void)clearBar;
+-(void)showLabelWithText:(NSString*)text ofColor:(CCColor*)color;
 
 @end

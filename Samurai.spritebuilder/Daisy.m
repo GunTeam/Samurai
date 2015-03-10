@@ -19,6 +19,7 @@
 
 -(Boolean)swipeDown{
     CCLOG(@"Daisy");
+    return NO;
 }
 
 -(NSString *)getType{
