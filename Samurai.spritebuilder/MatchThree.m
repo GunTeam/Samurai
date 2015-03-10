@@ -50,6 +50,7 @@
 
 -(void)acceptFlower:(Flower *)flowerSwiped{
     [_matchBar addToDisplay:[flowerSwiped getType]];
+    [flowerSwiped removeFromParentAndCleanup:true];
     if ([matchArray count] == 0) {
         [matchArray addObject:[flowerSwiped getType]];
         //change the grey circle with an animation of some sort
@@ -60,12 +61,17 @@
         //if it's an all same match
         if ([matchArray objectAtIndex:0] == [matchArray objectAtIndex:1] && [matchArray objectAtIndex:1] == [flowerSwiped getType] && [matchArray objectAtIndex:0] == [flowerSwiped getType]){
             //give the player the power-up
-            
+            CCLOG(@"all matched");
+            if ([[flowerSwiped getType]  isEqual: @"Flowers/Rose"]) {
+                [self addLife];
+            }
         } else if /*if it's an all same match, give appropriate power-up*/([matchArray objectAtIndex:0] != [matchArray objectAtIndex:1] && [matchArray objectAtIndex:1] != [flowerSwiped getType] && [matchArray objectAtIndex:0] != [flowerSwiped getType]){
             //give the player the points
-            
+            CCLOG(@"all different");
+
         } else /*it was a miss*/{
             [self loseLife];
+            CCLOG(@"life lost");
             //do something which tells player they lost life because of bad match
         }
         [_matchBar clearBar];
@@ -75,6 +81,22 @@
     
 }
 
+-(void)rejectFlower:(CCSprite *)flowerSwiped{
+    [flowerSwiped removeFromParentAndCleanup:true];
+}
+
+
+-(void)addLife{
+    if (self.lives <= 2) {
+        Heart *heart = [barOfHearts objectAtIndex:self.lives];
+        [heart gainHeart];
+        self.lives++;
+    } else{
+        for (Heart *heart in barOfHearts){
+            [heart gainHeart];
+        }
+    }
+}
 
 -(void)loseLife{
     self.lives -= 1;

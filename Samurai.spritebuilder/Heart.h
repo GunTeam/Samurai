@@ -14,5 +14,6 @@
 }
 
 -(void)loseHeart;
+-(void)gainHeart;
 
 @end
