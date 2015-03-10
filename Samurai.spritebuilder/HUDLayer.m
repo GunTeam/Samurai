@@ -64,6 +64,8 @@
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer{
     CCLOG(@"Crash!");
+    [self loseLife];
+    [flower removeFromParentAndCleanup:true];
     return true;
 }
 
@@ -83,6 +85,19 @@
     [self acceptPowerUp:flower];
     }
     }
+}
+
+-(void) rejectFlower:(CCSprite *)flowerSwiped{
+    
+}
+-(void) acceptFlower:(CCSprite *)flowerSwiped{
+    
+}
+-(void) killEnemy:(CCSprite *)flowerSwiped{
+    
+}
+-(void) acceptPowerUP:(CCSprite *)flowerSwiped{
+    
 }
 
 -(void)winGame{

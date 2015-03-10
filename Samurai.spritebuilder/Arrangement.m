@@ -25,7 +25,7 @@
     
     randomSequence = [[NSMutableArray alloc]init];
     
-    [self createRandomDesiredSequence:15];
+    [self createRandomDesiredSequence:5];
     
     CCNode *destroyer = [CCBReader load:@"FlowerDestroyer"];
     destroyer.position = CGPointMake(screenSize.x/4.,-100);

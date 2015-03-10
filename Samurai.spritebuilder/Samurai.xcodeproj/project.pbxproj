@@ -100,6 +100,8 @@
 		CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C151D1A85C7E400F4AA1A /* Collection.m */; };
 		CC4C15211A85C7F600F4AA1A /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4C15201A85C7F600F4AA1A /* Bouquet.m */; };
 		CCA5B1731AA4199E00E2ED2C /* GameoverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA5B1721AA4199E00E2ED2C /* GameoverScene.m */; };
+		CCAB33FD1AAE7AC9009249B3 /* MatchThree.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAB33FC1AAE7AC9009249B3 /* MatchThree.m */; };
+		CCAB34031AAE85B6009249B3 /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAB34021AAE85B6009249B3 /* Heart.m */; };
 		CCB49A4B1A9CFA2F00E7F0B1 /* TouchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB49A4A1A9CFA2F00E7F0B1 /* TouchNode.m */; };
 		CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */; };
 /* End PBXBuildFile section */
@@ -239,6 +241,10 @@
 		CC4C15201A85C7F600F4AA1A /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bouquet.m; sourceTree = "<group>"; };
 		CCA5B1711AA4199E00E2ED2C /* GameoverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverScene.h; sourceTree = "<group>"; };
 		CCA5B1721AA4199E00E2ED2C /* GameoverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameoverScene.m; sourceTree = "<group>"; };
+		CCAB33FB1AAE7AC9009249B3 /* MatchThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchThree.h; sourceTree = "<group>"; };
+		CCAB33FC1AAE7AC9009249B3 /* MatchThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchThree.m; sourceTree = "<group>"; };
+		CCAB34011AAE85B6009249B3 /* Heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
+		CCAB34021AAE85B6009249B3 /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
 		CCB49A491A9CFA2F00E7F0B1 /* TouchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchNode.h; sourceTree = "<group>"; };
 		CCB49A4A1A9CFA2F00E7F0B1 /* TouchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchNode.m; sourceTree = "<group>"; };
 		CCCA5AA41A89C5D6002D8932 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
@@ -472,6 +478,7 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CCAB34001AAE857F009249B3 /* HUDSprites */,
 				BA5B74791A85A3F600D154ED /* Scenes */,
 				CC4C15141A85C31100F4AA1A /* Game Modes */,
 				CCB49A441A9CFA1000E7F0B1 /* Custom Classes */,
@@ -609,8 +616,19 @@
 				CC4C151D1A85C7E400F4AA1A /* Collection.m */,
 				CCCA5AA41A89C5D6002D8932 /* HUDLayer.h */,
 				CCCA5AA51A89C5D6002D8932 /* HUDLayer.m */,
+				CCAB33FB1AAE7AC9009249B3 /* MatchThree.h */,
+				CCAB33FC1AAE7AC9009249B3 /* MatchThree.m */,
 			);
 			name = "Game Modes";
+			sourceTree = "<group>";
+		};
+		CCAB34001AAE857F009249B3 /* HUDSprites */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB34011AAE85B6009249B3 /* Heart.h */,
+				CCAB34021AAE85B6009249B3 /* Heart.m */,
+			);
+			name = HUDSprites;
 			sourceTree = "<group>";
 		};
 		CCB49A441A9CFA1000E7F0B1 /* Custom Classes */ = {
@@ -933,6 +951,8 @@
 				CC4C151B1A85C7DB00F4AA1A /* Arrangement.m in Sources */,
 				CC4C151E1A85C7E400F4AA1A /* Collection.m in Sources */,
 				CCCA5AA61A89C5D6002D8932 /* HUDLayer.m in Sources */,
+				CCAB33FD1AAE7AC9009249B3 /* MatchThree.m in Sources */,
+				CCAB34031AAE85B6009249B3 /* Heart.m in Sources */,
 				CCB49A4B1A9CFA2F00E7F0B1 /* TouchNode.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				BA79B3D01A83F9CF004E68DE /* GameScene.m in Sources */,
