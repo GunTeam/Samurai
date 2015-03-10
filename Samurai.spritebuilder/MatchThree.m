@@ -14,6 +14,9 @@
 -(void)didLoadFromCCB{
     [super didLoadFromCCB];
     
+    self.score = 0;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d",self.score];
+    
     possibleFlowers = @[@"Flowers/Lotus",@"Flowers/Rose",@"Flowers/ForgetMeNot"];
     self.flowerSpeed = 150;
     
@@ -28,14 +31,19 @@
     
     self.multiplier = 1;
     
-    
+    _timer.delegate = self;
+        
+}
+
+-(void)timesUp{
+    [self.delegate gameLose];
 }
 
 -(void)spawnFlower:(CCTime)dt{
     [super spawnFlower:dt];
     //take care of custom spawning
     
-    int numPossibleFlowers = [possibleFlowers count];
+    int numPossibleFlowers = (int)[possibleFlowers count];
     int flowerSpawnFlag = arc4random()%numPossibleFlowers;
     NSString *flowerToSpawn = [possibleFlowers objectAtIndex:flowerSpawnFlag];
     
@@ -52,7 +60,7 @@
 
 -(void)acceptFlower:(Flower *)flowerSwiped{
     [_matchBar addToDisplay:[flowerSwiped getType]];
-    [flowerSwiped removeFromParentAndCleanup:true];
+    [flowerSwiped gatherFlower];
     if ([matchArray count] == 0) {
         [matchArray addObject:[flowerSwiped getType]];
         //change the grey circle with an animation of some sort
@@ -63,13 +71,13 @@
         //if it's an all same match
         if ([matchArray objectAtIndex:0] == [matchArray objectAtIndex:1] && [matchArray objectAtIndex:1] == [flowerSwiped getType] && [matchArray objectAtIndex:0] == [flowerSwiped getType]){
             //give the player the power-up
-            CCLOG(@"all matched");
+            [self.delegate samuraiHappy];
             if ([[flowerSwiped getType]  isEqual: @"Flowers/Rose"]) {
                 [self addLife];
                 [_matchBar showLabelWithText:@"Life!" ofColor:[CCColor colorWithCcColor3b:ccRED]];
             } else if ([[flowerSwiped getType]  isEqual: @"Flowers/Lotus"]){
                 [_matchBar showLabelWithText:@"Time!" ofColor:[CCColor colorWithCcColor3b:ccYELLOW]];
-                
+                [_timer incrementTime:5];
             } else if([[flowerSwiped getType]  isEqual: @"Flowers/ForgetMeNot"]){
                 [_matchBar showLabelWithText:@"LevelUp!" ofColor:[CCColor colorWithCcColor3b:ccBLUE]];
                 self.multiplier++;
@@ -77,13 +85,14 @@
             }
         } else if /*if it's an all same match, give appropriate power-up*/([matchArray objectAtIndex:0] != [matchArray objectAtIndex:1] && [matchArray objectAtIndex:1] != [flowerSwiped getType] && [matchArray objectAtIndex:0] != [flowerSwiped getType]){
             //give the player the points
-            CCLOG(@"all different");
+            [self.delegate samuraiHappy];
             [_matchBar showLabelWithText:[NSString stringWithFormat:@"100x%d!",self.multiplier] ofColor:[CCColor colorWithCcColor3b:ccc3(0, 100, 0)]];
             self.score += 100 * self.multiplier;
+            _scoreLabel.string = [NSString stringWithFormat:@"%d",self.score];
         } else /*it was a miss*/{
             [self loseLife];
             [_matchBar showLabelWithText:@"Bad!" ofColor:[CCColor colorWithCcColor3b:ccc3(100, 0, 0)]];
-            CCLOG(@"life lost");
+            [self.delegate samuraiSad];
             //do something which tells player they lost life because of bad match
         }
         [_matchBar clearBar];
@@ -92,8 +101,8 @@
     
 }
 
--(void)rejectFlower:(CCSprite *)flowerSwiped{
-    [flowerSwiped removeFromParentAndCleanup:true];
+-(void)rejectFlower:(Flower *)flowerSwiped{
+    [flowerSwiped cutFlower];
 }
 
 

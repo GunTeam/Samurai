@@ -12,8 +12,9 @@
 #import "Heart.h"
 #import "Flower.h"
 #import "MatchBar.h"
+#import "Clock.h"
 
-@interface MatchThree : HUDLayer {
+@interface MatchThree : HUDLayer <ClockDelegate> {
     Heart *_heart1,*_heart2,*_heart3;
     CCLabelTTF *_scoreLabel;
     CCSprite *_circle1,*_circle2,*_circle3;
@@ -21,7 +22,7 @@
     NSMutableArray *matchArray;
     
     MatchBar *_matchBar;
-    
+    Clock *_timer;
     
     //torn from arrangement for prototyping
     NSArray *possibleFlowers;

@@ -15,6 +15,8 @@
 
 -(void)gameLose;
 -(void)gameWin;
+-(void)samuraiSad;
+-(void)samuraiHappy;
 
 @end
 

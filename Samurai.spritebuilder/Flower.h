@@ -26,6 +26,8 @@
 -(void) launch;
 -(NSString *)getType;
 -(Boolean)swipeDown;
+-(void)cutFlower;
+-(void)gatherFlower;
 
 @property NSString *pattern;
 @property float downwardVelocity;

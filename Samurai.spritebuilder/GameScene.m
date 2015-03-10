@@ -43,4 +43,12 @@
     [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GameOver"]];
 }
 
+-(void)samuraiHappy{
+    [_samurai happy];
+}
+
+-(void)samuraiSad{
+    [_samurai sad];
+}
+
 @end

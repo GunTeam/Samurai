@@ -79,10 +79,10 @@
         [self acceptFlower:flower];
     }
     else if([direction isEqualToString:@"up"]){
-        [self killEnemy:flower];
+//        [self killEnemy:flower];
     }
     else if([direction isEqualToString:@"down"]){
-    [self acceptPowerUp:flower];
+//    [self acceptPowerUp:flower];
     }
     }
 }

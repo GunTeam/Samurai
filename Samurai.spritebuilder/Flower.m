@@ -129,7 +129,24 @@
 -(void) launch{
     CGPoint velVector = CGPointMake(0, -downwardVelocity);
     self.physicsBody.velocity = velVector;
-    
+}
+
+-(void)update:(CCTime)delta{
+    if (self.opacity == 0){
+        [self removeFromParentAndCleanup:true];
+    }
+}
+
+-(void)gatherFlower{
+    self.physicsBody.velocity = CGPointMake(150, 0);
+    [self runAction:[CCActionFadeOut actionWithDuration:.2]];
+}
+
+-(void)cutFlower{
+    self.physicsBody.velocity = CGPointMake(0,0);
+    self.userInteractionEnabled = false;
+    [self runAction:[CCActionSequence actionWithArray:@[[CCActionTintTo actionWithDuration:.1 color:[CCColor colorWithCcColor3b:ccc3(255, 255, 255)]],[CCActionTintTo actionWithDuration:.1 color:[CCColor colorWithCcColor3b:ccc3(self.color.red, self.color.green, self.color.blue)]]]]];
+     [self runAction:[CCActionFadeOut actionWithDuration:.2]];
 }
 
 @end
