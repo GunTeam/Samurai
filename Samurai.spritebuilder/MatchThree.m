@@ -49,6 +49,7 @@
 }
 
 -(void)acceptFlower:(Flower *)flowerSwiped{
+    [_matchBar addToDisplay:[flowerSwiped getType]];
     if ([matchArray count] == 0) {
         [matchArray addObject:[flowerSwiped getType]];
         //change the grey circle with an animation of some sort
@@ -67,11 +68,12 @@
             [self loseLife];
             //do something which tells player they lost life because of bad match
         }
+        [_matchBar clearBar];
         [matchArray removeAllObjects];
+        //reset visual array of flowers
     }
     
 }
-
 
 
 -(void)loseLife{
