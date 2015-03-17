@@ -51,4 +51,11 @@
     [_samurai sad];
 }
 
+-(void)DismissTutorial{
+    [_HUDLayer play];
+    [_tutorial removeFromParent];
+    [_dismissButton removeFromParentAndCleanup:true];
+    
+}
+
 @end

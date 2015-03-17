@@ -11,6 +11,11 @@
 
 @implementation MatchThree
 
+-(void)play{
+    [super play];
+    [_timer startClock];
+}
+
 -(void)didLoadFromCCB{
     [super didLoadFromCCB];
     
@@ -20,9 +25,6 @@
     possibleFlowers = @[@"Flowers/Lotus",@"Flowers/Rose",@"Flowers/ForgetMeNot"];
     self.flowerSpeed = 150;
     
-    CCNode *destroyer = [CCBReader load:@"FlowerDestroyer"];
-    destroyer.position = CGPointMake(screenSize.x/4.,-100);
-    [physicsNode addChild:destroyer];
     
     self.lives = 3;
     barOfHearts = @[_heart1,_heart2,_heart3];

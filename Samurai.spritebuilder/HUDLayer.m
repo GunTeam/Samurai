@@ -30,6 +30,10 @@
     return self;
 }
 
+-(void)play{
+    [self schedule:@selector(spawnFlower:) interval:1];
+}
+
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = false;
     self.multipleTouchEnabled = false;
@@ -51,7 +55,11 @@
     CCLOG(@"width = %f",screenSize.x);
     CCLOG(@"height = %f",screenSize.y);
     
-    [self schedule:@selector(spawnFlower:) interval:1];
+//    [self schedule:@selector(spawnFlower:) interval:1];
+    
+    CCNode *destroyer = [CCBReader load:@"FlowerDestroyer"];
+    destroyer.position = CGPointMake(screenSize.x/4.,-20);
+    [physicsNode addChild:destroyer];
 }
 
 -(void)spawnFlower:(CCTime)dt{

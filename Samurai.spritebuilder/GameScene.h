@@ -17,6 +17,8 @@
     CGFloat screenHeight, screenWidth;
     HUDLayer *_HUDLayer;
     Samurai *_samurai;
+    CCSprite *_tutorial;
+    CCButton *_dismissButton;
 }
 
 -(void) didLoadFromCCB;

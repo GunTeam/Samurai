@@ -11,13 +11,16 @@
 
 @implementation Clock
 
+-(void)startClock{
+    [self schedule:@selector(decrementTime:) interval:1.];
+    [self schedule:@selector(timerFlash:) interval:1.];
+}
+
 -(void)didLoadFromCCB{
     self.time = 30;
     self.cascadeColorEnabled = true;
     
     self.color = [CCColor colorWithCcColor3b:ccc3(0, 150, 0)];
-    [self schedule:@selector(decrementTime:) interval:1.];
-    [self schedule:@selector(timerFlash:) interval:1.];
 }
 
 -(void)incrementTime:(int)timeIncrease{

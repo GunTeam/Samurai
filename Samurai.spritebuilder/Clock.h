@@ -24,5 +24,6 @@
 @property id delegate;
 
 -(void)incrementTime:(int)timeIncrease;
+-(void)startClock;
 
 @end

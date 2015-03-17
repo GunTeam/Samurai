@@ -44,5 +44,6 @@
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair flower:(Flower *)flower destroyer:(CCNode *)destroyer;
 -(void)loseGame;
 -(void)winGame;
+-(void)play;
 
 @end
